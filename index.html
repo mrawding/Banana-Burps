@@ -45,13 +45,15 @@
       });
       $("#start").on("click",function(){
           var counter = 60.0;
+          var trunc = counter.toFixed(2);
           var interval = setInterval(function() {
           counter -= 0.1;
           if (counter <= 0) {
           return;
          }
          else{
-        	$('#time').text(counter);
+           
+        	$('#time').text(trunc);
           console.log("Timer --> " + counter);
          }
     }, 100);
