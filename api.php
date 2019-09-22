@@ -19,17 +19,17 @@
     //there are several ways of getting the data out, iterating row by row,
     //I chose to get associative arrays inside of a big array
     //this will naturally create a pleasant array of JSON data when I echo in a couple lines
-    $results = $statement->fetchAll(PDO::FETCH_ASSOC);
-    function findPossibleWords($results)
-    {
-        $query1 = "SELECT rack, words FROM racks WHERE length <= 3 and LIKE $results";
-        $statement1 = $dbhandle->prepare($query1);
-        $statement1->execute();
-        $results1 = $statement->fetchAll(PDO::FETCH_ASSOC);
-        echo json_encode($results1);
-    }
+  //  $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+    //function findPossibleWords($results)
+    //{
+      //  $query1 = "SELECT rack, words FROM racks WHERE length <= 3 and LIKE $results";
+        //$statement1 = $dbhandle->prepare($query1);
+        //$statement1->execute();
+        //$results1 = $statement->fetchAll(PDO::FETCH_ASSOC);
+        //echo json_encode($results1);
+    //}
     
-    findPossibleWords($results);
+   // findPossibleWords($results);
     //this part is perhaps overkill but I wanted to set the HTTP headers and status code
     //making to this line means everything was great with this request
     header('HTTP/1.1 200 OK');
