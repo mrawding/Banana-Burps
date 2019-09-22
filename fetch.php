@@ -1,9 +1,13 @@
 <?php
+    $dbhandle = new PDO("sqlite:scrabble.sqlite") or die("Failed to open DB");
+    if (!$dbhandle) die ($error);
+
     $in=$_GET['txt'];
-if(!ctype_alnum($in)){
-echo "Data Error";
-exit;
-}
+
+    if(!ctype_alnum($in)){
+     echo "Data Error";
+     exit;
+    }
 
 $msg="";
 $msg="<select id=s1 size='15'>";
