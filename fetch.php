@@ -8,18 +8,11 @@
      echo "Data Error";
      exit;
     }
-
-$msg="";
-$msg="<select id=s1 size='15'>";
-if(strlen($in)>0 and strlen($in) <20 ){
-$sql="select racks, words from racks where words like '%$in%'";
-foreach ($dbo->query($sql) as $nt) {
-//$msg.=$nt[name]."->$nt[id]<br>";
-$msg .="<option value=$nt[id]>$nt[name] => $nt[id]</option>";
-//$msg .="<option value='$nt[name]'>";
-
-}
-}
-$msg .='</select>';
-echo $msg;
+    $query = "SELECT rack, words FROM racks WHERE words LIKE '%$in%'";
+    $statement = $dbhandle->prepare($query);
+    $statement->execute();
+    $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+    header('HTTP/1.1 200 OK');
+    header('Content-Type: application/json');
+    echo json_encode($results);
 ?>
