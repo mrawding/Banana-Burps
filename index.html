@@ -19,7 +19,8 @@
         <ul id="bingos">
         </ul>
       <br>
-      <input type="text" name="answer">
+      <input type="text"
+      onkeyup="ajaxFunction(this.value);" name="entry" />
       <button id="enter">Enter</button>
       </br>
     </form>
@@ -37,6 +38,7 @@
           $(evt.currentTarget).find(".answer").toggleClass("hidden");
         });
       }
+        
       $("#enter").on("click",function(){
         $.ajax({
             method: "GET",
