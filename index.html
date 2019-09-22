@@ -48,7 +48,7 @@
       $("#enter").on("click",function(){
         $.ajax({
             method: "GET",
-            url: "fetch.php?in=" + "#entry",
+            url: "fetch.php",
             success: data => {evalWord()}
           });
       });
