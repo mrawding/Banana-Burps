@@ -59,9 +59,7 @@
             url: "api.php",
             success: data=>{ showRacks(data)}
           });
-      });
-      $("#start").on("click",function(){
-          var counter = 60.0;
+        var counter = 60.0;
           var interval = setInterval(function() {
           counter -= 0.1;
           if (counter <= 0) {
@@ -73,7 +71,7 @@
           console.log("Timer --> " + counter);
          }
     }, 100);
-    });
+      });
     });
      
   </script>
