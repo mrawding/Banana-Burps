@@ -11,7 +11,10 @@
   <body>
     <h1>Welcome to Banana Burps</h1>
     <h2> Score: </h2>
-    <button id="grabmore">Fetch 10 Bingos</button>\
+    <h3> Time: </h2>
+    <span id="timer">
+    <span id="time">60</span>.
+    <button id="start">Start</button>
     <form>
         <ul id="bingos">
         </ul>
@@ -33,13 +36,27 @@
         });
       }
       
-      $("#grabmore").on("click", function(){
+      $("#start").on("click", function(){
         $.ajax({
             method: "GET",
             url: "api.php",
             success: data=>{ showRacks(data)}
-        });
+          });
       });
+        var counter = 60;
+        var interval = setInterval(function() {
+        counter--;
+         // Display 'counter' wherever you want to display it.
+        if (counter <= 0) {
+     	  	clearInterval(interval);
+          return;
+         }
+         else{
+        	$('#time').text(counter);
+          console.log("Timer --> " + counter);
+         }
+    }, 1000);
     });
+     
   </script>
 </html>
