@@ -11,9 +11,8 @@
   <body>
     <h1>Welcome to Banana Burps</h1>
     <h2> Score: </h2>
-    <h3> Time: </h2>
-    <span id="timer">
-    <span id="time">60</span>.
+    <span id="timer">Time:
+    <span id="time">60</span>
     <button id="start">Start</button>
     <form>
         <ul id="bingos">
@@ -42,12 +41,10 @@
             url: "api.php",
             success: data=>{ showRacks(data)}
           });
-        var counter = 60;
-        var interval = setInterval(function() {
-        counter--;
-         // Display 'counter' wherever you want to display it.
-        if (counter <= 0) {
-     	  	clearInterval(interval);
+          var counter = 60;
+          var interval = setInterval(function() {
+          counter--;
+          if (counter <= 0) {
           return;
          }
          else{
