@@ -2,7 +2,7 @@
     $dbhandle = new PDO("sqlite:scrabble.sqlite") or die("Failed to open DB");
     if (!$dbhandle) die ($error);
 
-    $in=$_GET['txt'];
+    $in = $_REQUEST["q"];
 
     if(!ctype_alnum($in)){
      echo "Data Error";
