@@ -11,6 +11,8 @@
   <body>
     <h1>Welcome to Banana Burps</h1>
     <h2> Score: </h2>
+    <ul id = "score">
+    </ul>
     <span id="timer">Time:
     <span id="time">60</span>
     </span>
@@ -19,8 +21,7 @@
         <ul id="bingos">
         </ul>
       <br>
-      <input type="text"
-      onkeyup="ajaxFunction(this.value);" name="entry" />
+      <input type="text" name="entry" />
       <button id="enter">Enter</button>
       </br>
     </form>
@@ -38,12 +39,17 @@
           $(evt.currentTarget).find(".answer").toggleClass("hidden");
         });
       }
+      
+      let evalWord = function(){
+         $("#score").html('');
+         $("#score").append("Found a word");
+      }
         
       $("#enter").on("click",function(){
         $.ajax({
             method: "GET",
-            url: "fetch.php",
-            success: data => {showRacks(data)}
+            url: "fetch.php?in=" + "#entry",
+            success: data => {evalWord()}
           });
       });
           
