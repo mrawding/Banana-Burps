@@ -41,6 +41,8 @@
             url: "api.php",
             success: data=>{ showRacks(data)}
           });
+      });
+      $("#start").on("click",function(){
           var counter = 60;
           var interval = setInterval(function() {
           counter--;
