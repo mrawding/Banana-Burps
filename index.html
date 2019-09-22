@@ -37,7 +37,14 @@
           $(evt.currentTarget).find(".answer").toggleClass("hidden");
         });
       }
-      
+      $("#enter").on("click",function(){
+        $.ajax({
+            method: "GET",
+            url: "fetch.php",
+            sucess: data => {showRacks(data)}
+          });
+      });
+          
       $("#start").on("click", function(){
         $.ajax({
             method: "GET",
