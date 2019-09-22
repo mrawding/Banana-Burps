@@ -4,10 +4,6 @@
 
     $in = $_REQUEST["in"];
 
-    if(!ctype_alnum($in)){
-     echo "Data Error";
-     exit;
-    }
     $query = "SELECT rack, words FROM racks WHERE words LIKE '%$in%'";
     $statement = $dbhandle->prepare($query);
     $statement->execute();
