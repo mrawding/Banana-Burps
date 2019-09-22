@@ -19,7 +19,7 @@
     //there are several ways of getting the data out, iterating row by row,
     //I chose to get associative arrays inside of a big array
     //this will naturally create a pleasant array of JSON data when I echo in a couple lines
-  //  $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+    $results = $statement->fetchAll(PDO::FETCH_ASSOC);
     //function findPossibleWords($results)
     //{
       //  $query1 = "SELECT rack, words FROM racks WHERE length <= 3 and LIKE $results";
