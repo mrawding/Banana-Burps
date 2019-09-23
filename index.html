@@ -47,6 +47,7 @@
         $.ajax({
             method: "POST",
             url: "fetch.php",
+            enctype: "multipart/form-data",
             text: ("#entry"),
             success: data => {evalWord()}
           });
