@@ -20,8 +20,8 @@
     //I chose to get associative arrays inside of a big array
     //this will naturally create a pleasant array of JSON data when I echo in a couple lines
     $results = $statement->fetchAll(PDO::FETCH_ASSOC);
-    echo json_encode($results);
-    $query1 = "SELECT rack, words FROM racks WHERE length >= 3 and rack LIKE %'$results[0]'%";
+    echo $results[0];
+    $query1 = "SELECT * FROM words WHERE length >= 3 and rack LIKE %'$results[0]'%";
     $statement1 = $dbhandle->prepare($query1);
     $statement1->execute();
     $results1 = $statement1->fetchAll(PDO::FETCH_ASSOC);
