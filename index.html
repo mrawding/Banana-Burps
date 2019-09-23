@@ -51,7 +51,7 @@
             method: "GET",
             url: "fetch.php",
             data: {text: $('input[name="entry"]').val(),
-                  rack: document.getElementById("bingos").innerText;
+                  rack: document.getElementById("bingos").innerText},
             dataType: 'text',
             success: data => {evalWord()}
           });
