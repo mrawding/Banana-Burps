@@ -45,8 +45,9 @@
         
       $("#enter").on("click",function(){
         $.ajax({
-            method: "GET",
+            method: "POST",
             url: "fetch.php",
+            text: ("#entry"),
             success: data => {evalWord()}
           });
       });
