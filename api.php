@@ -8,24 +8,21 @@
     $statement->execute();
     $results = $statement->fetchAll(PDO::FETCH_ASSOC);
     $rack = $results[0]["rack"];
-    echo $rack;
-    //$query1 = "SELECT words FROM racks WHERE rack=.$rack";
-    //$statement1 = $dbhandle->prepare($query1);
-    //$statement1->execute();
-    //$results1 = $statement1->fetchAll(PDO::FETCH_ASSOC);
-    //echo json_encode($results1);
-    //function findPossibleWords($results)
-    //{
-      //  $query1 = "SELECT rack, words FROM racks WHERE length <= 3 and LIKE $results";
-        //$statement1 = $dbhandle->prepare($query1);
-        //$statement1->execute();
-        //$results1 = $statement->fetchAll(PDO::FETCH_ASSOC);
-        //echo json_encode($results1);
-    //}
-    
-   // findPossibleWords($results);
-    //this part is perhaps overkill but I wanted to set the HTTP headers and status code
-    //making to this line means everything was great with this request
+    $racks  = [];
+    for($i = 0; $i < pow(2, strlen($rack)); $i++){
+	    $ans = "";
+	    for($j = 0; $j < strlen($rack); $j++){
+		    //if the jth digit of i is 1 then include letter
+		    if (($i >> $j) % 2) {
+		     $ans .= $rack[$j];
+		    }
+	    }
+	    if (strlen($ans) > 1){
+  	      $racks[] = $ans;	
+    	}
+    }
+    echo json_encode($racks);
+   
     header('HTTP/1.1 200 OK');
     //this lets the browser know to expect json
     header('Content-Type: application/json');
