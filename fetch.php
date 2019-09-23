@@ -2,8 +2,7 @@
     $dbhandle = new PDO("sqlite:scrabble.sqlite") or die("Failed to open DB");
     if (!$dbhandle) die ($error);
 
-    $in = $_REQUEST[text];
-    echo json_encode($in);
+    echo($test);
     $query = "SELECT rack, words FROM racks WHERE words LIKE '%$in%'";
     $statement = $dbhandle->prepare($query);
     $statement->execute();
