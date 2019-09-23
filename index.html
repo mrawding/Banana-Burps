@@ -47,7 +47,7 @@
         $.ajax({
             method: "GET",
             url: "fetch.php",
-            data: $("#entry"),
+            text: $("#entry"),
             success: data => {evalWord()}
           });
       });
