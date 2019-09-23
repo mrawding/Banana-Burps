@@ -19,10 +19,14 @@
     <button id="start">Start</button>
         <ul id="bingos">
         </ul>
-      <br>
-      <input type="text" name="entry" />
-      <button id="enter">Enter</button>
-      </br>
+    <form action="fetch.php" method="POST"> First name:
+
+        <input type="text" name="entry"> <br>
+
+        <input type="hidden" name="form_submitted" value="1" />
+
+        <input type="submit" value="Enter">
+    </form>
         
   </body>
   <script>
