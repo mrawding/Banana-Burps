@@ -20,12 +20,13 @@
         <span id="bingos">
         </span>
       <br>
-      <input type="text" name="entry" />
+      <input type="text" id="entry" />
       <button id="enter">Enter</button>
       </br>
         
   </body>
   <script>
+    var score = 0;
     $(document).ready(function(){
       let showRacks = function(racks){
         $("#bingos").html('');
@@ -36,44 +37,55 @@
           $(evt.currentTarget).find(".answer").toggleClass("hidden");
         });
       }
-      let getRack = function(racks){
-        $("#bingos").html('');
-        racks.map(rack=>{$("#bingos").append(`${rack.rack}`);
-         });
                         }
-      let evalWord = function(){
+      
+        
+      let findMatch = function(words, input){
+          var i;
+          for(i =0;i<words.length;i++){
+              var j;
+              for(j = 0;j < words[j].length; j++){
+                if(words[i][j] == input.toUpperCase()){
+                  return true;
+                }
+              }
+          }
+        return false;
+      }
+      let updateScore = function(score){
          $("#score").html('');
-         $("#score").append("Found a word");
+         $("#score").append(score);
       }
         
-      $("#enter").on("click",function(){
-        $.ajax({
-            method: "GET",
-            url: "fetch.php",
-            data: {text: $('input[name="entry"]').val(),
-                  rack: document.getElementById("bingos").innerText},
-            dataType: 'json',
-            success: data => {evalWord()}
-          });
-      });
+      let startGame = function(words){
+        var input = document.getElementById('entry');
+        var counter = 60.0;
+        var score = 0.0;
+        updateScore(score);
+        var interval = setInterval(function() {
+        counter -= 0.1;
+        if (counter <= 0) {
+          return;
+         }
+        else{
+        	$('#time').text(counter.toFixed(2));
+          input.addEventListener('keyup',function(){
+            if(findMatch(words,input)){
+              score += (input.length)*100;
+              updateScore(score);
+            }     
+         }
+         }, 100); 
+         }
+        }
           
       $("#start").on("click", function(){
         $.ajax({
             method: "GET",
             url: "api.php",
-            success: data=>{ getRack(data)}
+            success: data=>{ startGame(data)}
           });
-        var counter = 60.0;
-          var interval = setInterval(function() {
-          counter -= 0.1;
-          if (counter <= 0) {
-          return;
-         }
-         else{
-           
-        	$('#time').text(counter.toFixed(2));
-         }
-    }, 100);
+          
       });
     });
      
