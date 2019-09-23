@@ -28,7 +28,7 @@
 	     $statement->bindValue(':val', $value);
   	     $statement->execute();
 	     $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-	     $words .= results[0]["words"];
+	     $words .= $result[0]["words"];
     }
     $words = array_unique($words);
     $racks = array_unique($racks);
