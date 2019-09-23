@@ -21,8 +21,8 @@
     //this will naturally create a pleasant array of JSON data when I echo in a couple lines
     $results = $statement->fetchAll(PDO::FETCH_ASSOC);
     $rack = $results[0]["rack"];
-    $stringRack = ""$rack"";
-    echo $stringRack;
+  //  $stringRack = ""$rack"";
+   // echo $stringRack;
     echo $rack;
     //$query1 = "sSELECT words FROM racks WHERE rack="$rack"";
     //$statement1 = $dbhandle->prepare($query1);
