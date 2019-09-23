@@ -21,6 +21,7 @@
   	      $racks[] = $ans;	
     	}
     }
+    $racks = array_unique($racks);
     echo json_encode($racks);
    
     header('HTTP/1.1 200 OK');
