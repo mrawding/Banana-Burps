@@ -23,10 +23,10 @@
     $rack = $results[0]["rack"]
    // echo $stringRack;
     echo json_decode($rack);
-    $query1 = "SELECT words FROM racks WHERE rack=.$rack";
-    $statement1 = $dbhandle->prepare($query1);
-    $statement1->execute();
-    $results1 = $statement1->fetchAll(PDO::FETCH_ASSOC);
+    //$query1 = "SELECT words FROM racks WHERE rack=.$rack";
+    //$statement1 = $dbhandle->prepare($query1);
+    //$statement1->execute();
+    //$results1 = $statement1->fetchAll(PDO::FETCH_ASSOC);
     //echo json_encode($results1);
     //function findPossibleWords($results)
     //{
