@@ -36,7 +36,10 @@
           $(evt.currentTarget).find(".answer").toggleClass("hidden");
         });
       }
-      
+      let getRack = function(racks){
+        racks.map(rack=>{$("#bingos").append('<li>${rack.rack}</li>);
+         });
+                        }
       let evalWord = function(){
          $("#score").html('');
          $("#score").append("Found a word");
@@ -47,7 +50,7 @@
             method: "GET",
             url: "fetch.php",
             data: {text: $('input[name="entry"]').val(),
-                  rack: $("#bingos")},
+                  rack: $('ul[id = "bingos"]').val()},
             dataType: 'text',
             success: data => {evalWord()}
           });
@@ -57,7 +60,7 @@
         $.ajax({
             method: "GET",
             url: "api.php",
-            success: data=>{ showRacks(data)}
+            success: data=>{ getRack(data)}
           });
         var counter = 60.0;
           var interval = setInterval(function() {
