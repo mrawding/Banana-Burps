@@ -20,14 +20,13 @@
     //I chose to get associative arrays inside of a big array
     //this will naturally create a pleasant array of JSON data when I echo in a couple lines
     $results = $statement->fetchAll(PDO::FETCH_ASSOC);
-    $rack = $results[0]["rack"];
-  //  $stringRack = ""$rack"";
+    $rack = $results[0]["rack"]
    // echo $stringRack;
     echo $rack;
-    //$query1 = "sSELECT words FROM racks WHERE rack="$rack"";
-    //$statement1 = $dbhandle->prepare($query1);
-    //$statement1->execute();
-    //$results1 = $statement1->fetchAll(PDO::FETCH_ASSOC);
+    $query1 = "SELECT words FROM racks WHERE rack="$rack"";
+    $statement1 = $dbhandle->prepare($query1);
+    $statement1->execute();
+    $results1 = $statement1->fetchAll(PDO::FETCH_ASSOC);
     //echo json_encode($results1);
     //function findPossibleWords($results)
     //{
