@@ -11,14 +11,14 @@
   <body>
     <h1>Welcome to Banana Burps</h1>
     <h2> Score: </h2>
-    <ul id = "score">
-    </ul>
+    <span id = "score">
+    </span>
     <span id="timer">Time:
     <span id="time">60</span>
     </span>
     <button id="start">Start</button>
-        <ul id="bingos">
-        </ul>
+        <span id="bingos">
+        </span>
       <br>
       <input type="text" name="entry" />
       <button id="enter">Enter</button>
@@ -51,7 +51,7 @@
             method: "GET",
             url: "fetch.php",
             data: {text: $('input[name="entry"]').val(),
-                  text: $("#bingos").val()},
+                  rack: $("#bingos").val()},
             dataType: 'text',
             success: data => {evalWord()}
           });
