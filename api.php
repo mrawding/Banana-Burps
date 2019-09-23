@@ -22,8 +22,7 @@
     $results = $statement->fetchAll(PDO::FETCH_ASSOC);
     $rack = $results[0]["rack"];
     echo $rack;
-   // echo json_encode($results);
-    $query1 = "SELECT * FROM words WHERE length >= 3 and rack LIKE %'$rack'%";
+    $query1 = "SELECT * FROM words WHERE length >= 3 and rack LIKE %"$rack"%";
     $statement1 = $dbhandle->prepare($query1);
     $statement1->execute();
     $results1 = $statement1->fetchAll(PDO::FETCH_ASSOC);
