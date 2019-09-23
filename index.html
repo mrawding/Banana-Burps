@@ -46,7 +46,8 @@
         $.ajax({
             method: "GET",
             url: "fetch.php",
-            data: {text: $('input[name="entry"]').val()},
+            data: {text: $('input[name="entry"]').val(),
+                  rack: $("#bingos").val()},
             dataType: 'text',
             success: data => {evalWord()}
           });
