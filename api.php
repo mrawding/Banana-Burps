@@ -22,7 +22,7 @@
     	}
     }
     $words = [];
-    for each($racks as $value){
+    foreach($racks as $value){
 	     $query = "SELECT rack, words FROM racks WHERE rack = :val";
    	     $statement = $dbhandle->prepare($query);
 	     $statement->bindValue(':val', $value);
