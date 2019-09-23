@@ -32,9 +32,9 @@
     }
     $words = array_filter($words);
     $split_words = [];
+    $i = 0;
     foreach($words as $val){
-	    $tmp = explode("@@",$val);
-	    $splitwords[] = $tmp;
+	    $split_words = explode("@@",$val);
     }
 	    
 	    
