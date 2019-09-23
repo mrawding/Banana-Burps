@@ -32,10 +32,8 @@
     }
     $words = array_filter($words);
     $split_words = [];
-    $i = 0;
-    foreach($words as $val){
-	    $split_words = explode("@@",$val);
-    }
+    $split_words = explode("@@",$words);
+   
 	    
 	    
    // $words = array_unique($words);
