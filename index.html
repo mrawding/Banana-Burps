@@ -38,7 +38,7 @@
       }
       let getRack = function(racks){
         $("#bingos").html('');
-        racks.map(rack=>{$("#bingos").append('<li>${rack.rack}</li>');
+        racks.map(rack=>{$("#bingos").append(`<li>${rack.rack}</li>`);
          });
                         }
       let evalWord = function(){
