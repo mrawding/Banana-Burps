@@ -19,12 +19,10 @@
     <button id="start">Start</button>
         <ul id="bingos">
         </ul>
-    <form > Burp:
-
-        <input type="text" name="entry"> <br>
-
-
-        <input type="submit" value="Enter" name = "submit">
+    <form> Burp:
+       <input type="text" name="entry"> 
+       <br>
+       <input type="submit" value="Enter" name = "submit">
     </form>
         
   </body>
@@ -49,7 +47,7 @@
       $("#submit").on("click, function(){
            $.ajax({
                method: "GET",
-               textL "#entry",
+               text:  $("#entry"),
                url: "fetch.php",
                success: data => {evalWord()}
           });
