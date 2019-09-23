@@ -21,8 +21,17 @@
   	      $racks[] = $ans;	
     	}
     }
+    $words = [];
+    for each($racks as $value){
+	     $query = "SELECT rack, words FROM racks WHERE rack = $value";
+   	     $statement = $dbhandle->prepare($query);
+  	     $statement->execute();
+	     $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+	     $words .= results[0]["words"];
+    }
+    $words = array_unique($words);
     $racks = array_unique($racks);
-    echo json_encode($racks);
+    echo json_encode($words);
    
     header('HTTP/1.1 200 OK');
     //this lets the browser know to expect json
