@@ -47,7 +47,7 @@
             method: "GET",
             url: "fetch.php",
             data: {text: $('input[name="entry"]').val(),
-                  rack: $("#bingos").val()},
+                  rack: $("#bingos")},
             dataType: 'text',
             success: data => {evalWord()}
           });
