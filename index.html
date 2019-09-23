@@ -19,12 +19,12 @@
     <button id="start">Start</button>
         <ul id="bingos">
         </ul>
-    <form action="fetch.php" method="GET"> First name:
+    <form > Burp:
 
         <input type="text" name="entry"> <br>
 
 
-        <input type="submit" value="Enter">
+        <input type="submit" value="Enter" name = "submit">
     </form>
         
   </body>
@@ -46,16 +46,15 @@
          $("#score").append("Found a word");
       }
         
-      $("#enter").on("click",function(){
-        $.ajax({
-            method: "POST",
-            url: "fetch.php",
-            enctype: "multipart/form-data",
-            text: ("#entry"),
-            success: data => {evalWord()}
+      $("#submit").on("click, function(){
+           $.ajax({
+               method: "GET",
+               textL "#entry",
+               url: "fetch.php",
+               success: data => {evalWord()}
           });
       });
-          
+                          
       $("#start").on("click", function(){
         $.ajax({
             method: "GET",
