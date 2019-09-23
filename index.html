@@ -50,8 +50,8 @@
         $.ajax({
             method: "GET",
             url: "fetch.php",
-            data: JSON.stringify({text: $('input[name="entry"]').val(),
-                  rack: document.getElementById("bingos").innerText}),
+            data: {text: $('input[name="entry"]').val(),
+                  rack: document.getElementById("bingos").innerText},
             dataType: 'json',
             success: data => {evalWord()}
           });
