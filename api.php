@@ -23,8 +23,9 @@
     }
     $words = [];
     for each($racks as $value){
-	     $query = "SELECT rack, words FROM racks WHERE rack = $value";
+	     $query = "SELECT rack, words FROM racks WHERE rack = :val";
    	     $statement = $dbhandle->prepare($query);
+	     $statement->bindValue(':val', $value);
   	     $statement->execute();
 	     $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 	     $words .= results[0]["words"];
