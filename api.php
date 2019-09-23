@@ -28,12 +28,12 @@
 	     $statement->bindValue(':val', $value);
   	     $statement->execute();
 	     $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-	     echo($result);
+	     echo json_encode($result);
 	    // $words[] = $result;
     }
     $words = array_unique($words);
     $racks = array_unique($racks);
-    echo json_encode($words);
+  //  echo json_encode($words);
    
     header('HTTP/1.1 200 OK');
     //this lets the browser know to expect json
