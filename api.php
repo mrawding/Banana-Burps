@@ -17,7 +17,7 @@
 		     $ans .= $rack[$j];
 		    }
 	    }
-	    if (strlen($ans) > 1){
+	    if (strlen($ans) > 3){
   	      $racks[] = $ans;	
     	}
     }
