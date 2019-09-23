@@ -3,8 +3,8 @@
     if (!$dbhandle) die ($error);
     $json_queries = $_SERVER['QUERY_STRING'];
     $php_obj = json_decode(json_queries);
-    printr($php_obj);
-    echo($php_obj->text);
+    print_r($php_obj);
+    echo($php_obj[0]->text);
     $query = "SELECT rack, words FROM racks WHERE words LIKE '%$in%'";
     $statement = $dbhandle->prepare($query);
     $statement->execute();
