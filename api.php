@@ -30,7 +30,7 @@
 	     $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 	     $words[] = $result[0]["words"];
     }
-    $words = array_unique($words);
+   // $words = array_unique($words);
     $racks = array_unique($racks);
     echo json_encode($words);
    
