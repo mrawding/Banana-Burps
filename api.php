@@ -22,7 +22,7 @@
     $results = $statement->fetchAll(PDO::FETCH_ASSOC);
     $rack = $results[0]["rack"]
    // echo $stringRack;
-    echo json_decode($rack);
+    echo $rack;
     //$query1 = "SELECT words FROM racks WHERE rack=.$rack";
     //$statement1 = $dbhandle->prepare($query1);
     //$statement1->execute();
