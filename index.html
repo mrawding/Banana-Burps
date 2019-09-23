@@ -48,8 +48,7 @@
             method: "GET",
             url: "fetch.php",
             data: {
-              text: $('input[name="entry"]').val(),
-              empty: $("#entry").val()},
+              text: $('input[name="entry"]').val()},
             dataType: 'json',
             success: data => {evalWord()}
           });
