@@ -46,9 +46,7 @@
         $.ajax({
             method: "GET",
             url: "fetch.php",
-            data: {
-              text: $('input[name="entry"]').val()},
-          // store and get rack from cookie
+            data: {text: $('input[name="entry"]').val()},
             dataType: 'text',
             success: data => {evalWord()}
           });
