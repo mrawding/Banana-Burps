@@ -19,12 +19,10 @@
     <button id="start">Start</button>
         <ul id="bingos">
         </ul>
-    <form> Burp:
-       <input type="text" name="entry"> 
-       <br>
-       <input type="submit" value="Enter" name = "submit">
+      <br>
+      <input type="text" name="entry" />
+      <button id="enter">Enter</button>
       </br>
-    </form>
         
   </body>
   <script>
@@ -38,15 +36,22 @@
         $("#bingos li").on("click", function(evt){
           $(evt.currentTarget).find(".answer").toggleClass("hidden");
         });
-      } 
-      $("#submit").on("click, function(){
-           $.ajax({
-               method: "GET",
-               text:  $("#entry"),
-               url: "fetch.php",
+      }
+      
+      let evalWord = function(){
+         $("#score").html('');
+         $("#score").append("Found a word");
+      }
+        
+      $("#enter").on("click",function(){
+        $.ajax({
+            method: "GET",
+            url: "fetch.php",
+            text: ($"#entry"),
+            success: data => {evalWord()}
           });
       });
-                          
+          
       $("#start").on("click", function(){
         $.ajax({
             method: "GET",
