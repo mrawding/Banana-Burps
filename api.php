@@ -31,9 +31,16 @@
 	     $words[] = $result[0]["words"];
     }
     $words = array_filter($words);
+    $split_words = [];
+    foreach($words as $val){
+	    $tmp = explode("@@",$val);
+	    $splitwords[] = $tmp;
+    }
+	    
+	    
    // $words = array_unique($words);
     $racks = array_unique($racks);
-    echo json_encode($words);
+    echo json_encode($split_words);
    
     header('HTTP/1.1 200 OK');
     //this lets the browser know to expect json
