@@ -23,6 +23,7 @@
        <input type="text" name="entry"> 
        <br>
        <input type="submit" value="Enter" name = "submit">
+      </br>
     </form>
         
   </body>
@@ -37,20 +38,12 @@
         $("#bingos li").on("click", function(evt){
           $(evt.currentTarget).find(".answer").toggleClass("hidden");
         });
-      }
-      
-      let evalWord = function(){
-         $("#score").html('');
-         $("#score").append("Found a word");
-      }
-      });
-        
+      } 
       $("#submit").on("click, function(){
            $.ajax({
                method: "GET",
                text:  $("#entry"),
                url: "fetch.php",
-               success: data => {evalWord()}
           });
       });
                           
