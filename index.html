@@ -61,12 +61,7 @@
          }
         else{
         	$('#time').text(counter.toFixed(1));
-          input.addEventListener('keyup',function(){
-            if(findMatch(words,input)){
-              score += (input.length)*100;
-              updateScore(score);
-            }     
-         });
+          findMatch(words);
         }
         },100); 
          }
