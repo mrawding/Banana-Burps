@@ -74,10 +74,11 @@
         //    url: "api.php",
           //  success: data=> words
           //});
+        var words;
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-           var words = JSON.parse(this.responseText);
+           words = JSON.parse(this.responseText);
            document.getElementById("bingos").innerHTML = words[2];
           }
         };
