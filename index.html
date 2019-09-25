@@ -30,14 +30,14 @@
   <script>
  
     $(document).ready(function(){
-    
+    var words ={};
      $("#start").on("click", function(){
     //    $.ajax({
       //      method: "GET",
         //    url: "api.php",
           //  success: data=> words
           //});
-        var words;
+        
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
