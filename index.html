@@ -28,9 +28,10 @@
         
   </body>
   <script>
+ 
     $(document).ready(function(){
     
-      
+      var words;
      let findMatch = function(words, input){
          var i;
           for(i =0;i<words.length;i++){
@@ -71,8 +72,9 @@
         $.ajax({
             method: "GET",
             url: "api.php",
-            success: data=>{ startGame(data)}
-          }); 
+            success: data=> words}
+          });
+        startGame(words);
         });
     });
      
