@@ -62,6 +62,12 @@
          }
         else{
         	$('#time').text(counter.toFixed(1));
+          input.addEventListener('keyup',function(){
+            if(findMatch(words,input)){
+             // score += (input.length)*100;
+              //updateScore(score);
+            }     
+         });
           findMatch(words,input);
         }
         },100); 
@@ -74,7 +80,7 @@
               var j;
               for(j = 0;j < words[j].length; j++){
                 if(words[i][j] == input.toString().toUpperCase()){
-                  $("#word").text(word[i][j]);
+                  $("#word").text(words[i][j]);
                   return true;
                 }
               }
