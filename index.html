@@ -31,7 +31,43 @@
  
     $(document).ready(function(){
     
-
+     $("#start").on("click", function(){
+    //    $.ajax({
+      //      method: "GET",
+        //    url: "api.php",
+          //  success: data=> words
+          //});
+        var words;
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+           words = JSON.parse(this.responseText);
+           document.getElementById("bingos").innerHTML = words[2];
+          }
+        };
+        xmlhttp.open("GET", "api.php", true);
+        xmlhttp.send(); 
+        startGame(words);
+        });
+      
+     let startGame = function(words){
+        var input = document.getElementById('entry');
+        var counter = 60.0;
+        var score = 0.0;
+        updateScore(score);
+        var interval = setInterval(function() {
+        counter -= 0.1;
+        if (counter <= 0) {
+          return;
+         }
+        else{
+        	$('#time').text(counter.toFixed(1));
+          findMatch(words,input);
+        }
+        },100); 
+         }
+        
+      
      let findMatch = function(words, input){
          var i;
           for(i =0;i<words.length;i++){
@@ -50,42 +86,9 @@
          $("#score").append(score);
       }
         
-      let startGame = function(words){
-        var input = document.getElementById('entry');
-        var counter = 60.0;
-        var score = 0.0;
-        updateScore(score);
-        var interval = setInterval(function() {
-        counter -= 0.1;
-        if (counter <= 0) {
-          return;
-         }
-        else{
-        	$('#time').text(counter.toFixed(1));
-          findMatch(words);
-        }
-        },100); 
-         }
-        
+      
           
-      $("#start").on("click", function(){
-    //    $.ajax({
-      //      method: "GET",
-        //    url: "api.php",
-          //  success: data=> words
-          //});
-        var words;
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-           words = JSON.parse(this.responseText);
-           document.getElementById("bingos").innerHTML = words[2];
-          }
-        };
-        xmlhttp.open("GET", "api.php", true);
-        xmlhttp.send(); 
-        startGame(words);
-        });
+     
     });
      
   </script>
