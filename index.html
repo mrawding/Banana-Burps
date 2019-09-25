@@ -15,7 +15,9 @@
     </span>
     <span id="timer">Time:
     <span id="time">60</span>
+      
     </span>
+    <span id = "word"></span>
     <button id="start">Start</button>
         <span id="bingos">
         </span>
@@ -35,6 +37,7 @@
               var j;
               for(j = 0;j < words[j].length; j++){
                 if(words[i][j] == input.toString().toUpperCase()){
+                  $(#"#word").text(word[i][j]);
                   return true;
                 }
               }
@@ -57,7 +60,7 @@
           return;
          }
         else{
-        	$('#time').text(counter.toFixed(2));
+        	$('#time').text(counter.toFixed(1));
           input.addEventListener('keyup',function(){
             if(findMatch(words,input)){
               score += (input.length)*100;
