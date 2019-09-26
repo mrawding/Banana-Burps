@@ -66,11 +66,11 @@
             var input = document.getElementById('entry').value;
             $("#bingos").text(input);
             if(findMatch(words,input)){
-             // score += (input.length)*100;
-              //updateScore(score);
+               score += (input.length)*100;
+               updateScore(score);
             }     
          });
-          findMatch(words,input);
+ 
         }
         },100); 
          }
