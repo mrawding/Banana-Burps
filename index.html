@@ -51,7 +51,7 @@
         });
       
      let startGame = function(words){
-        var input = document.getElementById('entry');
+        var input = document.getElementById('entry').value;
         var counter = 60.0;
         var score = 0.0;
         updateScore(score);
@@ -62,10 +62,9 @@
          }
         else{
         	$('#time').text(counter.toFixed(1));
-          var inText = input.getElementById("entry");
           input.addEventListener('keyup',function(){
-            $("#bingos").text(inText);
-            if(findMatch(words,inText)){
+            $("#bingos").text(input);
+            if(findMatch(words,input)){
              // score += (input.length)*100;
               //updateScore(score);
             }     
