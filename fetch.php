@@ -1,6 +1,6 @@
 <?php
     header("Content-Type: application/json; charset=UTF-8");
-    $curent_score = _GET["x"];
+    $curent_score = $_GET["x"];
     session_start();
     
     echo json_encode($current_score);
