@@ -11,7 +11,7 @@ if (!isset($_SESSION["highscore"])){
 }
     
     
-    echo json_encode($_SESSION["HighScore"]);
+    echo json_encode($_SESSION["highscore"]);
     header('HTTP/1.1 200 OK');
     header('Content-Type: application/json');
    // echo json_encode($results);
