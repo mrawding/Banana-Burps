@@ -33,6 +33,7 @@
     $(document).ready(function(){
     var score = 0.0;
     var game_start = false;
+    var updated_hs = false;
     var counter = 60.0;
      $("#start").on("click", function(){
     //    $.ajax({
@@ -65,19 +66,10 @@
         xmlhttp1.send(); 
         startGame();
         });
-      
-      
-     let startGame = function(){
-        
-        counter = 60.0;
-        score = 0;
-        updateScore(score);
-       game_start = true;
-        var interval = setInterval(function() {
-        counter -= 0.1;
-        if (counter < 0) {
-          game_start = false;
-          var php_obj = JSON.stringify(score);
+     let updateHighScore = function()
+     {
+  
+       var php_obj = JSON.stringify(score);
           var xmlhttp1 = new XMLHttpRequest();
         
          xmlhttp1.onreadystatechange = function() {
@@ -87,8 +79,25 @@
           }
         };
         xmlhttp1.open("GET", "fetch.php?x="+php_obj,true);
-       // xmlhttp1.send(); 
+        xmlhttp1.send(); 
          }
+    }
+     let startGame = function(){
+        updated_hs = false;
+        counter = 60.0;
+        score = 0;
+        updateScore(score);
+       game_start = true;
+        var interval = setInterval(function() {
+        counter -= 0.1;
+        if (counter < 0) {
+          if(!updated_hs){
+            update_highscore();
+            updated_hs = true;
+          }
+         
+          return;
+          
         else{
            $('#time').text(counter.toFixed(1));
           $("#enter").on("click", function(){
