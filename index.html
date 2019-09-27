@@ -21,6 +21,7 @@
     <button id="start">Start</button>
         <span id="bingos">
         </span>
+    <span id = "highscore">Highscore: </span>
       <br>
       <input type="text" id="entry" />
       <button id="enter">Enter</button>
@@ -45,11 +46,23 @@
         if (this.readyState == 4 && this.status == 200) {
            window.words = JSON.parse(this.responseText);
           // this is where rack should be.
-           document.getElementById("bingos").innerHTML = window.words[2][1];
+           document.getElementById("bingos").innerHTML = window.words[window.words.length];
           }
         };
         xmlhttp.open("GET", "api.php", true);
         xmlhttp.send(); 
+        var php_obj = score;
+        var xmlhttp1 = new XMLHttpRequest();
+        
+        xmlhttp1.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+           document.getElementById("highscore").innerHTML = JSON.parse(this.responseText);
+         
+
+          }
+        };
+        xmlhttp1.open("GET", "fetch.php?x=", php_obj,false);
+        xmlhttp1.send(); 
         startGame();
         });
       
