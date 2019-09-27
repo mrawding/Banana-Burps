@@ -1,6 +1,5 @@
 <?php
     header("Content-Type: application/json; charset=UTF-8");
-    $current_score = [];
     $curent_score[] = explode("x=",$_SERVER['QUERY_STRING']);
     session_start();
     
