@@ -6,7 +6,6 @@
     
     
     if (!isset($_SESSION["HighScore"])){
-    print_r("What the fuck);
     $_SESSION["HighScore"] = "0";
     }else{
         if($current_score[0][1] > $_SESSION["HighScore"]){
