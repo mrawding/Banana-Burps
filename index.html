@@ -32,6 +32,7 @@
     $(document).ready(function(){
     var words ={};
     var game_start = false;
+    var counter = 60.0;
      $("#start").on("click", function(){
     //    $.ajax({
       //      method: "GET",
@@ -55,7 +56,7 @@
       
      let startGame = function(words){
         
-        var counter = 60.0;
+        counter = 60.0;
         var score = 0.0;
         updateScore(score);
        game_start = true;
