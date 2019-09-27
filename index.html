@@ -75,8 +75,7 @@
         
      let findMatch = function(words){
          var i;
-         while(game_start){
-          document.addEventListener('keyup',function(){
+         document.addEventListener('keyup',function(){
           var input = document.getElementById('entry').value;
           var inp_text = text(input);
           for(i =0;i<words.length;i++){
@@ -90,7 +89,7 @@
               }
           }      
          });
-         }
+         
       }
       let updateScore = function(score){
          $("#score").html('');
