@@ -8,7 +8,7 @@
     $_SESSION["HighScore"] = 0;
     }
     else{
-    if($current_score[1] > $_SESSION["HighScore"]){
+    if($current_score[""] > $_SESSION["HighScore"]){
         $_SESSION["HighScore"] = $currrent_score[1];
     }
     }
