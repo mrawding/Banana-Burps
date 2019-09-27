@@ -1,13 +1,10 @@
 <?php
-    $dbhandle = new PDO("sqlite:scrabble.sqlite") or die("Failed to open DB");
-    if (!$dbhandle) die ($error);
-    $rack = $_GET['rack'];
-    $input = $_GET['text'];
-    echo($rack);
-    $query = "SELECT rack, words FROM racks WHERE words LIKE '%$in%'";
-    $statement = $dbhandle->prepare($query);
-    $statement->execute();
-    $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+    session_start();
+    $curent_score = json_decode($_GET["x"], false);
+    $_SESSION("HighScore") = 0;
+    if($current_score > $_SESSION("HighScore")
+       $_SESSION("HighScore") = $currrent_score;
+    echo(json_encode($_SESSION("HighScore");
     header('HTTP/1.1 200 OK');
     header('Content-Type: application/json');
    // echo json_encode($results);
