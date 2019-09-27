@@ -75,7 +75,7 @@
        game_start = true;
         var interval = setInterval(function() {
         counter -= 0.1;
-        if (counter <= 0) {
+        if (counter < 0) {
           game_start = false;
           var php_obj = JSON.stringify(score);
           var xmlhttp1 = new XMLHttpRequest();
@@ -88,7 +88,7 @@
         };
         xmlhttp1.open("GET", "fetch.php?x="+php_obj,true);
         xmlhttp1.send(); 
-        return;
+        break;
          }
         else{
            $('#time').text(counter.toFixed(1));
