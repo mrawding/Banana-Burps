@@ -49,11 +49,11 @@
         };
         xmlhttp.open("GET", "api.php", true);
         xmlhttp.send(); 
-        startGame(window.words);
+        startGame();
         });
       
       
-     let startGame = function(words){
+     let startGame = function(){
         
         counter = 60.0;
         var score = 0.0;
@@ -68,20 +68,20 @@
         else{
            $('#time').text(counter.toFixed(1));
           $("#enter").on("click", function(){
-        	findMatch(words);
+        	findMatch();
           });
         }
         },100); 
          }
         
-     let findMatch = function(words){
+     let findMatch = function(){
          var i;
           var input = document.getElementById('entry').value;
           var inp_text = String(input);
-          for(i =0;i<words.length;i++){
+          for(i =0;i<window.words.length;i++){
               var j;
-              for(j = 0;j < words[i].length; j++){
-                if(words[i][j] == inp_text.toUpperCase()){
+              for(j = 0;j < window.words[i].length; j++){
+                if(window.words[i][j] == inp_text.toUpperCase()){
                   score += (input.length)*100;
                   updateScore(score);
                   return true;
