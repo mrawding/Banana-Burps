@@ -4,7 +4,7 @@
     $curent_score = explode("x=",$_SERVER['QUERY_STRING']);
     session_start();
     
-    echo json_encode($current_score[0]);
+    echo json_encode($current_score);
     if (!isset($_SESSION["HighScore"])){
     $_SESSION["HighScore"] = 0;
     }
