@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $curent_score = json_decoed($_GET["x"],false);
+    $curent_score = json_decode($_GET["x"],false);
     echo json_encode($current_score);
     if (!isset($_SESSION["HighScore"])){
     $_SESSION["HighScore"] = 0;
