@@ -1,7 +1,8 @@
 <?php
     header("Content-Type: application/json; charset=UTF-8");
-    session_start();
     $curent_score = json_decode($_GET["x"], false);
+    session_start();
+    
     echo json_encode($current_score);
     if (!isset($_SESSION["HighScore"])){
     $_SESSION["HighScore"] = 0;
