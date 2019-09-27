@@ -66,16 +66,16 @@
           return;
          }
         else{
+          $("#enter").on("click", function(){
           $('#time').text(counter.toFixed(1));
         	findMatch(words);
- 
+          });
         }
         },100); 
          }
         
      let findMatch = function(words){
          var i;
-         document.addEventListener('keyup',function(){
           var input = document.getElementById('entry').value;
           var inp_text = String(input);
           for(i =0;i<words.length;i++){
@@ -88,7 +88,7 @@
                 }
               }
           }      
-         });
+         
          
       }
       let updateScore = function(score){
