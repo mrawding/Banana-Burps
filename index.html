@@ -42,7 +42,8 @@
         xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
            words = JSON.parse(this.responseText);
-           document.getElementById("bingos").innerHTML = words[2];
+          // this is where rack should be.
+           document.getElementById("bingos").innerHTML = words[2][1];
           }
         };
         xmlhttp.open("GET", "api.php", true);
@@ -64,8 +65,8 @@
         	$('#time').text(counter.toFixed(1));
           document.addEventListener('keyup',function(){
             var input = document.getElementById('entry').value;
-            $("#bingos").text(input);
-            if(findMatch(words,input)){
+            var inp_text = text(input);
+            if(findMatch(words,inp_text)){
                score += (input.length)*100;
                updateScore(score);
             }     
@@ -78,11 +79,11 @@
       
      let findMatch = function(words, input){
          var i;
+         var 
           for(i =0;i<words.length;i++){
               var j;
               for(j = 0;j < words[j].length; j++){
                 if(words[i][j] == input.toString().toUpperCase()){
-                  $("#word").text(words[i][j]);
                   
                   return true;
                 }
@@ -92,7 +93,7 @@
       }
       let updateScore = function(score){
          $("#score").html('');
-         $("#score").append(score);
+         $("#score").text(score);
       }
         
       
