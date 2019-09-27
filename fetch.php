@@ -4,7 +4,7 @@
     $curent_score[] = explode("x=",$_SERVER['QUERY_STRING']);
     session_start();
     
-   // echo json_encode($curent_score);
+    echo json_encode($curent_score[0][1]);
     if (!isset($_SESSION["HighScore"])){
     $_SESSION["HighScore"] = 0;
     }
@@ -13,7 +13,7 @@
         $_SESSION["HighScore"] = $currrent_score[0][1];
     }
     }
-    echo json_encode($_SESSION["HighScore"]);
+    //echo json_encode($_SESSION["HighScore"]);
     header('HTTP/1.1 200 OK');
     header('Content-Type: application/json');
    // echo json_encode($results);
