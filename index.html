@@ -45,7 +45,7 @@
         if (this.readyState == 4 && this.status == 200) {
            words = JSON.parse(this.responseText);
           // this is where rack should be.
-           document.getElementById("bingos").innerHTML = words[2][1];
+           document.getElementById("bingos") = words[2][1];
           }
         };
         xmlhttp.open("GET", "api.php", true);
