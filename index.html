@@ -80,7 +80,7 @@
           var inp_text = String(input);
           for(i =0;i<words.length;i++){
               var j;
-              for(j = 0;j < words[j].length; j++){
+              for(j = 0;j < words[i].length; j++){
                 if(words[i][j] == input.toString().toUpperCase()){
                   score += (input.length)*100;
                   updateScore(score);
