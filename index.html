@@ -30,7 +30,6 @@
   <script>
     
     $(document).ready(function(){
-    var words;
     var game_start = false;
     var counter = 60.0;
      $("#start").on("click", function(){
@@ -43,14 +42,14 @@
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-           words = JSON.parse(this.responseText);
+           window.words = JSON.parse(this.responseText);
           // this is where rack should be.
            document.getElementById("bingos").innerHTML = words[2][1];
           }
         };
         xmlhttp.open("GET", "api.php", true);
         xmlhttp.send(); 
-        startGame(words);
+        startGame(window.words);
         });
       
       
