@@ -83,6 +83,7 @@
               for(j = 0;j < window.words[i].length; j++){
                 if(window.words[i][j] == inp_text.toUpperCase()){
                   score += (input.length)*100;
+                  document.getElementById('entry').value = "";
                   updateScore(score);
                   return true;
                 }
