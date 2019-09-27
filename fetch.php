@@ -1,7 +1,7 @@
 <?php
     header("Content-Type: application/json; charset=UTF-8");
     
-    $curent_score = explode("x:",json_decode($_SERVER['QUERY_STRING']));
+    $curent_score = explode("x=",json_decode($_SERVER['QUERY_STRING']));
     session_start();
     
     echo json_encode($current_score[0]);
