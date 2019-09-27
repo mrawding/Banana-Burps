@@ -66,8 +66,8 @@
           return;
          }
         else{
+           $('#time').text(counter.toFixed(1));
           $("#enter").on("click", function(){
-          $('#time').text(counter.toFixed(1));
         	findMatch(words);
           });
         }
