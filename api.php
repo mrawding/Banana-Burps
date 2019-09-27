@@ -9,6 +9,7 @@
     $statement->execute();
     $results = $statement->fetchAll(PDO::FETCH_ASSOC);
     $rack = $results[0]["rack"];
+    $rRack = $rack;
     $racks  = [];
     for($i = 0; $i < pow(2, strlen($rack)); $i++){
 	    $ans = "";
@@ -44,6 +45,7 @@
     $racks = array_unique($racks);
     $_SESSION["valid_words"] = $split_words;
     echo json_encode($split_words);
+    echo json_encode($rRack);
    
     header('HTTP/1.1 200 OK');
     //this lets the browser know to expect json
