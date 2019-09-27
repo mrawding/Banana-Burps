@@ -46,12 +46,12 @@
         if (this.readyState == 4 && this.status == 200) {
            window.words = JSON.parse(this.responseText);
           // this is where rack should be.
-           document.getElementById("bingos").innerHTML = window.words[window.words.length];
+           document.getElementById("bingos").innerHTML = window.words[window.words.length - 1];
           }
         };
         xmlhttp.open("GET", "api.php", true);
         xmlhttp.send(); 
-        var php_obj = score;
+        var php_obj = JSON.stringify(score);
         var xmlhttp1 = new XMLHttpRequest();
         
         xmlhttp1.onreadystatechange = function() {
