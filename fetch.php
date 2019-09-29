@@ -4,7 +4,7 @@ $cookie_name = "Highscore";
 $cookie_value = 0;
 $curent_score[] = explode("x=",$_SERVER['QUERY_STRING']);
 setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
-$score = (int) current_score[0][1];
+$score = ((integer)current_score[0][1]);
 if(!isset($_COOKIE[$cookie_name])) {
     echo json_encode $cookie_value;
 } else {
