@@ -2,9 +2,9 @@
 
 $cookie_name = "Highscore";
 $cookie_value = 0;
-$curent_score[] = explode("x=",$_SERVER['QUERY_STRING']);
+$curent_score[] = explode("x=",$_SERVER["QUERY_STRING"]);
 setcookie($cookie_name, $cookie_value);
-echo json_encode $current_score;
+echo json_encode $current_score[];
 //if(!isset($_COOKIE[$cookie_name])) {
   //  echo json_encode $cookie_value;
 //} else {
