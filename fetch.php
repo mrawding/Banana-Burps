@@ -5,17 +5,15 @@ $cookie_value = 0;
 $curent_score[] = explode("x=",$_SERVER['QUERY_STRING']);
 setcookie($cookie_name, $cookie_value);
 echo $current_score;
-?>
-<?php
-if(!isset($_COOKIE[$cookie_name])) {
-    echo json_encode $cookie_value;
-} else {
-    if($_COOKIE[$cookie_value] < $score){
-        $cookie_value = $score;
-        setcookie($cookie_name, $cookie_value);
-        echo json_encode $_COOKIE[$cookie_value];
-    }
-}
+//if(!isset($_COOKIE[$cookie_name])) {
+  //  echo json_encode $cookie_value;
+//} else {
+ //   if($_COOKIE[$cookie_value] < $score){
+   //     $cookie_value = $score;
+     //   setcookie($cookie_name, $cookie_value);
+       // echo json_encode $_COOKIE[$cookie_value];
+    //}
+//}
     
     header('HTTP/1.1 200 OK');
     header('Content-Type: application/json');
