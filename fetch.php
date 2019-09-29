@@ -12,6 +12,7 @@ if(!isset($_COOKIE[$cookie_name])) {
         $cookie_value = $score;
         setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
         echo json_encode $_COOKIE[$cookie_value];
+    }
 }
     
     header('HTTP/1.1 200 OK');
