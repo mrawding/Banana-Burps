@@ -2,7 +2,7 @@
 header('Content-Type: application/json');
 $cookie_name = "Highscore";
 $cookie_value = 0;
-$score = $_GET["score"];
+$score = $_POST["score"];
 $score = json_decode($score);
 setcookie($cookie_name, $cookie_value);
 echo "what the fuck .$score " ;
