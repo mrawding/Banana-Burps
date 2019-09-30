@@ -26,6 +26,10 @@ h2, h3 {
   
   display: inline;
 }
+div {
+    width: 800px;
+    background-color: skyblue;
+}
 
 
 
