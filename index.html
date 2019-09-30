@@ -79,6 +79,7 @@
            if(score > document.getElementById("highscore")){
            document.getElementById("highscore").innerHTML = score;
            }
+           location.reload(false);
          
           }
         };
@@ -99,7 +100,7 @@
           if(!updated_hs){
             updateHighScore();
             updated_hs = true;
-            //location.reload(false);
+            //
           }
          
           return;
