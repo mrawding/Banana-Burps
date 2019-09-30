@@ -4,7 +4,7 @@ $cookie_name = "Highscore";
 $cookie_value = 0;
 $request_body = file_get_contents('php://input');
 //$score = json_decode($request_body);
-$score_int = array($request_body["score"]);
+$score_int = array($request_body[1]);
 echo json_encode($score_int);
 setcookie($cookie_name, $cookie_value);
 //echo json_encode $current_score[0][1];
