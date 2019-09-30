@@ -62,7 +62,7 @@
           }
         };
         xmlhttp1.open("GET", "fetch.php",true);
-        xmlhttp1.send(JSPN.stringify({"score": score})); 
+        xmlhttp1.send(JSON.stringify({"score": score})); 
         startGame();
         });
      let updateHighScore = function()
