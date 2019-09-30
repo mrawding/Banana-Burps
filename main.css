@@ -8,7 +8,7 @@ html, body {
 h1 {
  color: #FFFF33;
  text-align: center;
- border: 3px groove #FFFF33
+ border: 12px groove skyblue
 }
 h2 {
   font-size: 30px;
@@ -26,10 +26,7 @@ h2, h3 {
   
   display: inline;
 }
-div {
-    width: 800px;
-    background-color: skyblue;
-}
+
 
 
 
