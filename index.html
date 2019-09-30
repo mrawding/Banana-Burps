@@ -56,7 +56,7 @@
         
         xmlhttp1.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-           document.getElementById("highscore").innerHTML = JSON.parse(this.responseText)["score"];
+           document.getElementById("highscore").innerHTML = JSON.parse(this.responseText);
          
 
           }
@@ -74,7 +74,7 @@
         
          xmlhttp1.onreadystatechange = function() {
          if (this.readyState == 4 && this.status == 200) {
-           document.getElementById("highscore").innerHTML = JSON.parse(this.responseText)["score"];
+           document.getElementById("highscore").innerHTML = JSON.parse(this.responseText);
          
           }
         };
