@@ -23,6 +23,8 @@ h2, h3 {
   height: 60px;
   margin: 75px;
   padding: 175px;
+  
+  text-alaign: center;
   display: inline;
 }
 
