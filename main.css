@@ -21,7 +21,7 @@ h3 {
 h2, h3 {
   width: 50%;
   height: 60px;
-  margin: 20px;
+  margin: 0;
   padding: 500px;
   display: inline;
 }
