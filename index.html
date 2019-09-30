@@ -123,7 +123,7 @@
               for(j = 0;j < window.words[i].length; j++){
                 var k;
                 for(k = 0; k < used_words.length; k++){
-                if(window.words[i][j] == inp_text.toUpperCase() && inp_text.toUppderCase() != used_words[k]){
+                if(window.words[i][j] == inp_text.toUpperCase() && inp_text.toUpperCase() != used_words[k]){
                   score += (input.length)*100;
                   document.getElementById('entry').value = "";
                   used_words.push(inp_text.toUpperCase());
