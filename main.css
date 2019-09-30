@@ -26,6 +26,11 @@ h2, h3 {
   
   display: inline;
 }
+div#disp{
+  font-size: 25px;
+  color: red;
+  text-align: center;
+}
 
 
 
