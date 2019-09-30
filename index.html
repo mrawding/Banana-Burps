@@ -62,6 +62,7 @@
           }
         };
         xmlhttp1.open("GET", "fetch.php",true);
+        xmlhttp1.setRequestHeader("Content-Type", "application/json");
         xmlhttp1.send(JSON.stringify({"score": score})); 
         startGame();
         });
@@ -78,6 +79,7 @@
           }
         };
         xmlhttp1.open("GET", "fetch.php",true);
+        xmlhttp1.setRequestHeader("Content-Type", "application/json");
         xmlhttp1.send(JSON.stringify({"score":score})); 
      }
     
