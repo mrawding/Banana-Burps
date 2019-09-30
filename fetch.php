@@ -8,17 +8,17 @@ $score = json_decode($request_body);
 $score_key = "score";
 setcookie($cookie_name, $cookie_value);
 $score_int = $score->$score_key;
-echo $score_int;
+
 //echo json_encode $current_score[0][1];
-//if(!isset($_COOKIE[$cookie_name])) {
-  //  echo json_encode $cookie_value;
-//} else {
-  //  if($_COOKIE[$cookie_value] < $score){
-    //    $cookie_value = $score_int;
-      //  setcookie($cookie_name, $cookie_value);
-        //echo json_encode $_COOKIE[$cookie_value];
-    //}
-//}
+if(!isset($_COOKIE[$cookie_name])) {
+    echo json_encode $cookie_value;
+} else {
+    if($_COOKIE[$cookie_value] < $score){
+        $cookie_value = $score_int;
+         setcookie($cookie_name, $cookie_value);
+         echo json_encode $_COOKIE[$cookie_value];
+    }
+}
     
     header('HTTP/1.1 200 OK');
   
