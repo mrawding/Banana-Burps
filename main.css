@@ -33,6 +33,12 @@ div#disp{
   color: skyblue;
   text-align: center;
 }
+div#user_inp{
+  padding-top: 50px;
+  font-size: 45px;
+  color: skyblue;
+  text-align: center;
+  paddin-right: 20px;
 
 
 
