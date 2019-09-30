@@ -23,6 +23,7 @@ h2, h3 {
   height: 60px;
   margin: 100px;
   padding: 125px;
+  padding-bottom: 75px;
   
   display: inline;
 }
