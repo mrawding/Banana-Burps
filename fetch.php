@@ -11,7 +11,7 @@ $score_int = $score->$score_key;
 
 //echo json_encode $current_score[0][1];
 if(!isset($_COOKIE[$cookie_name])) {
-    echo json_encode($cookie_value);
+    echo json_encode($_COOKIE[$cookie_name]);
 } else {
     if($_COOKIE[$cookie_value] <= $score_int){
         $cookie_value = $score_int;
