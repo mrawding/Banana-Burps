@@ -52,7 +52,6 @@
         };
         xmlhttp.open("GET", "api.php", true);
         xmlhttp.send(); 
-        var php_obj = JSON.stringify(score);
         var xmlhttp1 = new XMLHttpRequest();
         
         xmlhttp1.onreadystatechange = function() {
@@ -63,7 +62,7 @@
           }
         };
         xmlhttp1.open("GET", "fetch.php",true);
-        xmlhttp1.send({"score": score}); 
+        xmlhttp1.send(JSPN.stringify({"score": score})); 
         startGame();
         });
      let updateHighScore = function()
@@ -79,7 +78,7 @@
           }
         };
         xmlhttp1.open("GET", "fetch.php",true);
-        xmlhttp1.send({"score":score}); 
+        xmlhttp1.send(JSON.stringify({"score":score})); 
      }
     
      let startGame = function(){
