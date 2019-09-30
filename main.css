@@ -27,16 +27,12 @@ h2, h3 {
   display: inline;
 }
 
-span#score{
+span{
   font-size: 25px;
   color: #FFFFF33;
  
 }
-span#highscore{
-  font-size: 25px;
-  color: #FFFFF33;
- 
-}
+
 
 
 
