@@ -21,10 +21,9 @@ h3 {
 h2, h3 {
   width: 50%;
   height: 60px;
-  margin: 75px;
+  margin: 100px;
   padding: 175px;
   
-  text-alaign: center;
   display: inline;
 }
 
