@@ -18,7 +18,7 @@ if(!isset($_COOKIE[$cookie_name])) {
          setcookie($cookie_name, $cookie_value);
          
     }
-    echo json_encode($_COOKIE[$cookie_value]);
+    echo json_encode($_COOKIE[$cookie_name]);
 }
 
     
