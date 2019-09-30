@@ -10,10 +10,17 @@ h1 {
  text-align: center;
  border: 3px groove #FFFF33
 }
+h2{
+  color: #FFFFFF;
+ width: 900px;
+ text-align: left;
+  font-size: 25px;
+}
 h3 {
  color: #FFFFFF;
  width: 900px;
  text-align: right;
+ font-size: 25px;
 }
 
 
