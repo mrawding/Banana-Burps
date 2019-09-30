@@ -7,7 +7,7 @@ $score = json_decode($request_body);
 //$score_int = $score["score"];
 $score_key = "score";
 setcookie($cookie_name, $cookie_value);
-$score_int = (int)$score->$score_key;
+$score_int = $score->$score_key;
 
 //echo json_encode $current_score[0][1];
 if(!isset($_COOKIE[$cookie_name])) {
