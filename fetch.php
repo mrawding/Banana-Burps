@@ -13,7 +13,7 @@ $score_int = $score->$score_key;
 if(!isset($_COOKIE[$cookie_name])) {
     echo $cookie_value;
 } else {
-    if($_COOKIE[$cookie_value] < $score_int){
+    if($_COOKIE[$cookie_value] <= $score_int){
         $cookie_value = $score_int;
          setcookie($cookie_name, $cookie_value);
          echo $_COOKIE[$cookie_value];
