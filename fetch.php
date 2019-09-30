@@ -3,7 +3,7 @@
 $cookie_name = "Highscore";
 $cookie_value = 0;
 $score = $_GET["score"];
-$scoew = json_decode($score);
+$score = json_decode($score);
 setcookie($cookie_name, $cookie_value);
 echo "what the fuck .$score " ;
 //echo json_encode $current_score[0][1];
