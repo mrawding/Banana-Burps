@@ -76,9 +76,9 @@
           
           }
         };
-        xmlhttp1.open("POST", "fetch.php",true);
+        xmlhttp1.open("GET", "fetch.php",true);
         xmlhttp1.setRequestHeader("Content-Type", "application/json");
-        xmlhttp1.send(JSON.stringify({"score": score})); 
+        xmlhttp1.send(); 
         //startGame();
         });
      let updateHighScore = function()
