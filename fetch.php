@@ -16,9 +16,10 @@ if(!isset($_COOKIE[$cookie_name])) {
     if($_COOKIE[$cookie_value] <= $score_int){
         $cookie_value = $score_int;
          setcookie($cookie_name, $cookie_value);
-         echo $_COOKIE[$cookie_value];
+         
     }
 }
+echo $_COOKIE[$cookie_value];
     
     header('HTTP/1.1 200 OK');
   
