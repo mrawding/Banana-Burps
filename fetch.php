@@ -3,7 +3,7 @@ header('Content-Type: application/json');
 $cookie_name = "Highscore";
 $cookie_value = 0;
 $score = $_POST["score"];
-echo json_encode ($score);
+echo $score;
 setcookie($cookie_name, $cookie_value);
 //echo json_encode $current_score[0][1];
 //if(!isset($_COOKIE[$cookie_name])) {
