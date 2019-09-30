@@ -5,9 +5,9 @@ $cookie_value = 0;
 $request_body = file_get_contents('php://input');
 $score = json_decode($request_body);
 //$score_int = $score["score"];
-$score_int = json_encode($score)["score"];
+$score_int = json_encode($score);
 setcookie($cookie_name, $cookie_value);
-echo $score_int;
+echo $score_int[0];
 //echo json_encode $current_score[0][1];
 //if(!isset($_COOKIE[$cookie_name])) {
   //  echo json_encode $cookie_value;
