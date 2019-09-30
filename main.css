@@ -5,18 +5,13 @@ html, body {
   color: #776e65;
   font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
   font-size: 18px; }
+h1 {
+ color: #FFFF33;
+ text-align: center;
+}
 
-@keyframes move-up {
-  0% {
-    top: 25px;
-    opacity: 1; }
 
-  100% {
-    top: -50px;
-    opacity: 0; } }
-.scores-container {
-  float: right;
-  text-align: right; }
+
 
 .score-container, .best-container {
   position: relative;
