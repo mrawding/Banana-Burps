@@ -50,9 +50,10 @@ div#user_inp{
   text-align: center;
   padding-right: 20px;
 }
-input:focus {
+input {
   background-color: lime ;
-  width: 25%;
+  height: 5%
+  width: 35%;
   border-bottom: 4px solid red;
   color: navy;
 }
