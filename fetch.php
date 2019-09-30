@@ -1,5 +1,5 @@
 <?php
-
+header('Content-Type: application/json');
 $cookie_name = "Highscore";
 $cookie_value = 0;
 $score = $_GET["score"];
@@ -18,6 +18,6 @@ echo "what the fuck .$score " ;
 //}
     
     header('HTTP/1.1 200 OK');
-    header('Content-Type: application/json');
+  
    // echo json_encode($results);
 ?>
