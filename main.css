@@ -58,7 +58,7 @@ input {
   color: navy;
 }
 button#start{
-  background-color: #4CAF50;
+  background-color: lightcoral;
   border: none;
   color: white;
   padding: 16px 32px;
@@ -66,6 +66,16 @@ button#start{
   margin: 4px 2px;
   cursor: pointer;
 }
+button#enter{
+  background-color: lightcoral;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
 
 
 
