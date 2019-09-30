@@ -27,7 +27,7 @@ h2, h3 {
   display: inline;
 }
 
-span[timer]:before {
+span[time]:before {
   content: attr(timer);
   color: red;
   width: 15px;
