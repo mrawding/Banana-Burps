@@ -34,6 +34,7 @@
     var score = 0.0;
     var game_start = false;
     var updated_hs = false;
+    var used_words = [" "];
     var counter = 60.0;
      $("#start").on("click", function(){
     //    $.ajax({
@@ -48,6 +49,7 @@
            window.words = JSON.parse(this.responseText);
           // this is where rack should be.
            document.getElementById("bingos").innerHTML = window.words[window.words.length - 1];
+           startGame();
           }
         };
         xmlhttp.open("GET", "api.php", true);
@@ -57,7 +59,7 @@
         xmlhttp1.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
            document.getElementById("highscore").innerHTML = JSON.parse(this.responseText);
-          startGame();
+          
 
           }
         };
@@ -97,7 +99,7 @@
           if(!updated_hs){
             updateHighScore();
             updated_hs = true;
-           // location.reload(false);
+            location.reload(false);
           }
          
           return;
@@ -119,11 +121,15 @@
           for(i =0;i<window.words.length;i++){
               var j;
               for(j = 0;j < window.words[i].length; j++){
-                if(window.words[i][j] == inp_text.toUpperCase()){
+                var k;
+                for(k = 0; k < used_words.length; k++){
+                if(window.words[i][j] == inp_text.toUpperCase() && inp_text.toUppderCase() != used_words[k]){
                   score += (input.length)*100;
                   document.getElementById('entry').value = "";
+                  used_words.push(inp_text.toUpperCase());
                   updateScore(score);
                   return true;
+                }
                 }
               }
           }      
