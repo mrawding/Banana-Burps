@@ -118,18 +118,25 @@
          var i;
           var input = document.getElementById('entry').value;
           var inp_text = String(input);
+          var not_used = true;
           var k;
           for(k = 0; k < used_words.length; k++){
+            if(inp_text.toUpperCase() == used_words[k])
+            {
+              not_used = false;
+            }
+          }
+          if(not_used){
              for(i =0;i<window.words.length;i++){
                 var j;
                   for(j = 0;j < window.words[i].length; j++){
                 
-                    if(window.words[i][j] == inp_text.toUpperCase() && inp_text.toUpperCase() != used_words[k]){
+                    if(window.words[i][j] == inp_text.toUpperCase()){
                      score += (input.length)*100;
                     document.getElementById('entry').value = "";
                     used_words.push(inp_text.toUpperCase());
                     updateScore(score);
-                   return true;
+                  // return true;
                     }
                   }
               }
