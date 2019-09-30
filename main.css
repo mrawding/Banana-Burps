@@ -23,11 +23,12 @@ h2, h3 {
   height: 60px;
   margin: 100px;
   padding: 125px;
-  padding-bottom: 200px;
+  
   
   display: inline;
 }
 div#disp{
+  padding-top: 200px;
   font-size: 25px;
   color: red;
   text-align: center;
